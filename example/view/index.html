@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="form">
+    <input type="text" name="test" data-sv-pattern="test" required="test">
+    <button type="button" data-action="validation-check-click">validation-check</button>
+  </form>
+  <div data-name="result"></div>
+</body>
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/js-util": "/node_modules/@nuka9510/js-util/dist/index.js",
+      "@nuka9501/simple-valication": "/dist/index.js"
+    },
+    "scopes": {
+      "/dist/": { "/dist/validation": "/dist/validation.js" },
+      "/node_modules/@nuka9510/js-util/dist/": { "/node_modules/@nuka9510/js-util/dist/util": "/node_modules/@nuka9510/js-util/dist/util.js" }
+    }
+  }
+</script>
+<script type="module" src="../js/index.js"></script>
+</html>
