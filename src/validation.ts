@@ -38,9 +38,9 @@ export default class Validation {
    *   import SValidation from "@nuka9510/simple-validation";
    * 
    *   const validation = new SValidation({regex: {password: /^[\S!?@#$%^&*():;+-=~{}<>\_\[\]\|\\\"\'\,\.\/\`]{6,10}$/}});
-   *   
+   * 
    *   validation.run(form);
-   *   
+   * 
    *   if (validation.result.flag) {
    *     form.submit();
    *   } else {
