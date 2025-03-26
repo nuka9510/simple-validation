@@ -1,6 +1,6 @@
 {
   "name": "@nuka9510/simple-validation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "simple validation util for web front-end",
   "main": "dist/index.js",
   "directories": {
@@ -15,6 +15,7 @@
   },
   "keywords": [
     "web",
+    "module",
     "front-end",
     "util",
     "validation"
@@ -26,6 +27,6 @@
   },
   "homepage": "https://github.com/nuka9510/simple-validation",
   "dependencies": {
-    "@nuka9510/js-util": "^1.0.21"
+    "@nuka9510/js-util": "^1.0.22"
   }
 }

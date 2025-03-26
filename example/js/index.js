@@ -1,4 +1,4 @@
-import { SValidation } from "@nuka9501/simple-valication";
+import { SValidation } from "@nuka9510/simple-validation";
 
 class Index {
   constructor() {
