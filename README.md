@@ -102,7 +102,7 @@ class Index {
   }
 
   init() {
-    document.querySelectorAll('[data-action]').forEach((...arg) => { arg[0].addEventListener('click', this.onValidationCheckClick); });
+    document.querySelectorAll('[data-action="validation-check-click"]').forEach((...arg) => { arg[0].addEventListener('click', this.onValidationCheckClick); });
   }
 
   onValidationCheckClick(ev) {
