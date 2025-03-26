@@ -75,10 +75,6 @@ new Index();
     "imports": {
       "@nuka9510/js-util": "/node_modules/@nuka9510/js-util/dist/index.js",
       "@nuka9501/simple-valication": "/dist/index.js"
-    },
-    "scopes": {
-      "/dist/": { "/dist/validation": "/dist/validation.js" },
-      "/node_modules/@nuka9510/js-util/dist/": { "/node_modules/@nuka9510/js-util/dist/util": "/node_modules/@nuka9510/js-util/dist/util.js" }
     }
   }
 </script>
@@ -88,5 +84,5 @@ new Index();
 
 [github]: https://img.shields.io/badge/github-blue.svg?style=flat&logo=github
 [github-url]: https://github.com/nuka9510/simple-validation
-[npm]: https://img.shields.io/badge/npm-1.0.3-blue.svg?style=flat&logo=nodedotjs
+[npm]: https://img.shields.io/badge/npm-1.0.4-blue.svg?style=flat&logo=nodedotjs
 [npm-url]: https://www.npmjs.com/package/@nuka9510/simple-validation
