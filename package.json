@@ -3,6 +3,7 @@
   "version": "1.0.8",
   "description": "simple validation util for web front-end",
   "main": "dist/index.js",
+  "type": "module",
   "directories": {
     "example": "example"
   },
