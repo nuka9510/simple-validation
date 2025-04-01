@@ -1,7 +1,4 @@
-export = validation;
-export as namespace validation;
-
-declare namespace validation {
+declare module 'validation' {
   type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
   /** 결과 값 객체 */

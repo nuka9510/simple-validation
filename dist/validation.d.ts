@@ -1,4 +1,5 @@
-import { config, result } from "../@types/validation";
+/// <reference path="../@types/index.d.ts" />
+import { config, result } from "validation";
 /**
  * Validation Check를 위한 객체
  */

@@ -1,5 +1,6 @@
+/// <reference path="../@types/index.d.ts" />
+import { config, el, InputElement, radio, regex, result } from "validation";
 import { JUtil } from "@nuka9510/js-util";
-import { config, el, InputElement, radio, regex, result } from "../@types/validation";
 
 /**
  * Validation Check를 위한 객체
