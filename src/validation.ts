@@ -1,5 +1,4 @@
-/// <reference path="../@types/index.d.ts" />
-import { config, el, InputElement, radio, regex, result } from "validation";
+import { config, el, InputElement, radio, regex, result } from "../@types/validation";
 import { JUtil } from "@nuka9510/js-util";
 
 /**
