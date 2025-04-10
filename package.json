@@ -1,6 +1,6 @@
 {
   "name": "@nuka9510/simple-validation",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "simple validation util for web front-end",
   "main": "dist/index.js",
   "scripts": {
