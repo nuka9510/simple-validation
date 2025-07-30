@@ -1,5 +1,5 @@
 import { config, el, InputElement, radio, regex, result } from "../@types/validation";
-import { JUtil } from "@nuka9510/js-util";
+import { Util } from "@nuka9510/js-util";
 
 /**
  * Validation Check를 위한 객체
@@ -87,8 +87,8 @@ export default class Validation {
     regex: regex | null = null
   ): void {
     this.#regex = (
-      !JUtil.empty(regex) &&
-      JUtil.isObject(regex)
+      !Util.empty(regex) &&
+      Util.isObject(regex)
     )
       ? {
         ...this.#regex,
@@ -103,10 +103,10 @@ export default class Validation {
   ): void {
     const required = el.getAttribute('required');
 
-    if (!JUtil.empty(required)) {
+    if (!Util.empty(required)) {
       if (el.type == 'radio') {
         this.#setRadio(el);
-      } else if (JUtil.empty(el.value)) {
+      } else if (Util.empty(el.value)) {
         this.result.flag = false;
         this.result.alertMsg = `'${required}'을/를 입력해 주세요.`;
         this.result.el = el;
@@ -136,20 +136,20 @@ export default class Validation {
     const pattern = el.dataset['svPattern'],
     date = el.dataset['svDate'];
 
-    if (!JUtil.empty(pattern)) {
-      if (JUtil.empty(this.#el.el)) { this.#el.el = []; }
+    if (!Util.empty(pattern)) {
+      if (Util.empty(this.#el.el)) { this.#el.el = []; }
 
       this.#el.el?.push(el);
     }
 
-    if (!JUtil.empty(date)) {
+    if (!Util.empty(date)) {
       const state = el.dataset['svDateState'];
 
       switch (state) {
         case 'S':
         case 'E':
-          if (JUtil.empty(this.#el.date)) { this.#el.date = {}; }
-          if (JUtil.empty((this.#el.date as NonNullable<el['date']>)[date as string])) { (this.#el.date as NonNullable<el['date']>)[date as string] = {}; }
+          if (Util.empty(this.#el.date)) { this.#el.date = {}; }
+          if (Util.empty((this.#el.date as NonNullable<el['date']>)[date as string])) { (this.#el.date as NonNullable<el['date']>)[date as string] = {}; }
 
           (this.#el.date as NonNullable<el['date']>)[date as string][state] = el;
           break;
@@ -163,8 +163,8 @@ export default class Validation {
   ): void {
     const required = el.getAttribute('required');
 
-    if (!JUtil.empty(required)) {
-      if (JUtil.empty(this.#radio[required as string])) {
+    if (!Util.empty(required)) {
+      if (Util.empty(this.#radio[required as string])) {
         this.#radio[required as string] = [el];
       } else { this.#radio[required as string].push(el); }
     }
@@ -204,8 +204,8 @@ export default class Validation {
         edate = (el[i].E as InputElement).value;
 
         if (
-          !JUtil.empty(sdate) &&
-          !JUtil.empty(edate)
+          !Util.empty(sdate) &&
+          !Util.empty(edate)
         ) {
           const inputName = (el[i].S as InputElement).dataset['svInputName'] ||
                             (el[i].E as InputElement).dataset['svInputName'],
@@ -235,7 +235,7 @@ export default class Validation {
 
         if (Object.keys(this.#regex).includes(pattern)) {
           if (
-            !JUtil.empty(val) &&
+            !Util.empty(val) &&
             !this.#regex[pattern].test(val)
           ) {
             this.result.flag = false;
@@ -253,7 +253,7 @@ export default class Validation {
 
       if (Object.keys(this.#regex).includes(pattern)) {
         if (
-          !JUtil.empty(val) &&
+          !Util.empty(val) &&
           !this.#regex[pattern].test(val)
         ) {
           this.result.flag = false;

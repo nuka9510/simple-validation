@@ -1,7 +1,3 @@
-import Validation from "./validation.mjs";
-import { JUtil } from "@nuka9510/js-util";
+import Validation from "./validation.js";
 
-export {
-  Validation,
-  JUtil
-};
+export { Validation };

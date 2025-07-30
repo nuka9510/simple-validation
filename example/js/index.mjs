@@ -1,4 +1,4 @@
-import { SValidation } from "@nuka9510/simple-validation";
+import { Validation } from "@nuka9510/simple-validation";
 
 class Index {
   constructor() {
@@ -12,7 +12,7 @@ class Index {
   }
 
   onValidationCheckClick(ev) {
-    const validation = new SValidation({ regex: { test: /^test/ } }),
+    const validation = new Validation({ regex: { test: /^test/ } }),
     result = document.querySelector('[data-name="result"]');
 
     validation.run(form);

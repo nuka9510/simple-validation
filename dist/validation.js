@@ -1,4 +1,4 @@
-import { JUtil } from "@nuka9510/js-util";
+import { Util } from "@nuka9510/js-util";
 /**
  * Validation Check를 위한 객체
  */
@@ -70,8 +70,8 @@ export default class Validation {
     #radioInit() { this.#radio = {}; }
     /** validation check에 사용할 정규식을 담은 객체 초기화 */
     #regexInit(regex = null) {
-        this.#regex = (!JUtil.empty(regex) &&
-            JUtil.isObject(regex))
+        this.#regex = (!Util.empty(regex) &&
+            Util.isObject(regex))
             ? {
                 ...this.#regex,
                 ...regex
@@ -81,11 +81,11 @@ export default class Validation {
     /** el에 있는 Element들을 required check한다.  */
     #required(el) {
         const required = el.getAttribute('required');
-        if (!JUtil.empty(required)) {
+        if (!Util.empty(required)) {
             if (el.type == 'radio') {
                 this.#setRadio(el);
             }
-            else if (JUtil.empty(el.value)) {
+            else if (Util.empty(el.value)) {
                 this.result.flag = false;
                 this.result.alertMsg = `'${required}'을/를 입력해 주세요.`;
                 this.result.el = el;
@@ -107,21 +107,21 @@ export default class Validation {
     /** el에 Element를 담는다.  */
     #setEl(el) {
         const pattern = el.dataset['svPattern'], date = el.dataset['svDate'];
-        if (!JUtil.empty(pattern)) {
-            if (JUtil.empty(this.#el.el)) {
+        if (!Util.empty(pattern)) {
+            if (Util.empty(this.#el.el)) {
                 this.#el.el = [];
             }
             this.#el.el?.push(el);
         }
-        if (!JUtil.empty(date)) {
+        if (!Util.empty(date)) {
             const state = el.dataset['svDateState'];
             switch (state) {
                 case 'S':
                 case 'E':
-                    if (JUtil.empty(this.#el.date)) {
+                    if (Util.empty(this.#el.date)) {
                         this.#el.date = {};
                     }
-                    if (JUtil.empty(this.#el.date[date])) {
+                    if (Util.empty(this.#el.date[date])) {
                         this.#el.date[date] = {};
                     }
                     this.#el.date[date][state] = el;
@@ -132,8 +132,8 @@ export default class Validation {
     /** `#radio`에 type이 'radio'인 Element를 담는다.  */
     #setRadio(el) {
         const required = el.getAttribute('required');
-        if (!JUtil.empty(required)) {
-            if (JUtil.empty(this.#radio[required])) {
+        if (!Util.empty(required)) {
+            if (Util.empty(this.#radio[required])) {
                 this.#radio[required] = [el];
             }
             else {
@@ -172,8 +172,8 @@ export default class Validation {
         for (const i in el) {
             if (this.result.flag) {
                 const sdate = el[i].S.value, edate = el[i].E.value;
-                if (!JUtil.empty(sdate) &&
-                    !JUtil.empty(edate)) {
+                if (!Util.empty(sdate) &&
+                    !Util.empty(edate)) {
                     const inputName = el[i].S.dataset['svInputName'] ||
                         el[i].E.dataset['svInputName'], required = el[i].S.getAttribute('required') ||
                         el[i].E.getAttribute('required');
@@ -195,7 +195,7 @@ export default class Validation {
             for (const i of el) {
                 const pattern = i.dataset['svPattern'], inputName = i.dataset['svInputName'], required = i.getAttribute('required'), val = i.value;
                 if (Object.keys(this.#regex).includes(pattern)) {
-                    if (!JUtil.empty(val) &&
+                    if (!Util.empty(val) &&
                         !this.#regex[pattern].test(val)) {
                         this.result.flag = false;
                         this.result.alertMsg = `'${inputName || required}'의 형식이 올바르지 않습니다.`;
@@ -208,7 +208,7 @@ export default class Validation {
         else {
             const pattern = el.dataset['svPattern'], inputName = el.dataset['svInputName'], required = el.getAttribute('required'), val = el.value;
             if (Object.keys(this.#regex).includes(pattern)) {
-                if (!JUtil.empty(val) &&
+                if (!Util.empty(val) &&
                     !this.#regex[pattern].test(val)) {
                     this.result.flag = false;
                     this.result.alertMsg = `'${inputName || required}'의 형식이 올바르지 않습니다.`;

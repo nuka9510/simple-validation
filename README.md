@@ -32,63 +32,76 @@
 
 [top-language]: https://img.shields.io/github/languages/top/nuka9510/simple-validation
 
-## Usage
-### js (> 1.1.2)
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/index.min.js"> </script>
-```
-```
-<form name="form">
-  <input type="text" name="test" data-sv-pattern="test" required="test">
-</form>
-<script type="text/javascript">
-  const validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
-
-  validation.run(form);
-
-  console.debug(validation.result);
-</script>
-```
-### mjs
+## Install
 ```
 npm i @nuka9510/simple-validation
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/js/index.min.js"> </script>
 ```
 ```
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-validation": "<path>/node_modules/@nuka9510/simple-validation/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.mjs",
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.mjs",
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/index.mjs"
+      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs",
+      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/js-util.min.mjs"
     }
   }
 </script>
 ```
 ```
-<form name="form">
-  <input type="text" name="test" data-sv-pattern="test" required="test">
-</form>
-<script type="text/javascript">
-  import { SValidation } from "@nuka9510/simple-validation";
-
-  const validation = new SValidation({ regex: { test: /^test/ } });
-
-  validation.run(form);
-
-  console.debug(validation.result);
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/esm/index.min.mjs",
+      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/esm/js-util.min.mjs"
+    }
+  }
 </script>
+```
+```
+<script type="importmap">
+  {
+    "imports": {
+      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/esm/index.min.mjs",
+      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/esm/js-util.min.mjs"
+    }
+  }
+</script>
+```
+## Usage
+### js (> 1.1.2)
+```
+const validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
+
+validation.run(form);
+
+console.debug(validation.result);
+```
+### mjs
+```
+import { Validation } from "@nuka9510/simple-validation";
+
+const validation = new Validation({ regex: { test: /^test/ } });
+
+validation.run(form);
+
+console.debug(validation.result);
+```
+### cjs (> 1.2.0)
+```
+const simpleValidation = require('@nuka9510/simple-validation'),
+validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
+
+validation.run(form);
+
+console.debug(validation.result);
 ```
 ### example
 ```
@@ -100,7 +113,7 @@ example
 ```
 * example/js/index.mjs
 ```
-import { SValidation } from "@nuka9510/simple-validation";
+import { Validation } from "@nuka9510/simple-validation";
 
 class Index {
   constructor() {
@@ -114,7 +127,7 @@ class Index {
   }
 
   onValidationCheckClick(ev) {
-    const validation = new SValidation({ regex: { test: /^test/ } }),
+    const validation = new Validation({ regex: { test: /^test/ } }),
     result = document.querySelector('[data-name="result"]');
 
     validation.run(form);
@@ -147,8 +160,8 @@ new Index();
 <script type="importmap">
   {
     "imports": {
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs",
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/index.mjs"
+      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs",
+      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/js-util.min.mjs"
     }
   }
 </script>
