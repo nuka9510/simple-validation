@@ -94,6 +94,15 @@ validation.run(form);
 
 console.debug(validation.result);
 ```
+### cjs (> 1.2.3)
+```
+const simpleValidation = require('@nuka9510/simple-validation'),
+validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
+
+validation.run(form);
+
+console.debug(validation.result);
+```
 ### example
 ```
 example
