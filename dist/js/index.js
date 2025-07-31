@@ -1,4 +1,3 @@
-/** @type {import("../index.d.ts")} */
 var simpleValidation;
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
