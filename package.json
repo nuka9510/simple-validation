@@ -1,6 +1,6 @@
 {
   "name": "@nuka9510/simple-validation",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "simple validation util for web front-end",
   "type": "module",
   "exports": {
