@@ -48,30 +48,21 @@ npm i @nuka9510/simple-validation
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs",
-      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/js-util.min.mjs"
-    }
+    "imports": { "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs" }
   }
 </script>
 ```
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/esm/index.min.mjs",
-      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/esm/js-util.min.mjs"
-    }
+    "imports": { "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@latest/dist/esm/index.min.mjs" }
   }
 </script>
 ```
 ```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/esm/index.min.mjs",
-      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/esm/js-util.min.mjs"
-    }
+    "imports": { "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation@<specific-version>/dist/esm/index.min.mjs" }
   }
 </script>
 ```
@@ -159,10 +150,7 @@ new Index();
 </body>
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs",
-      "@nuka9510/simple-validation/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/js-util.min.mjs"
-    }
+    "imports": { "@nuka9510/simple-validation": "https://cdn.jsdelivr.net/npm/@nuka9510/simple-validation/dist/esm/index.min.mjs" }
   }
 </script>
 <script type="module" src="../js/index.mjs"></script>
