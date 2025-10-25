@@ -67,7 +67,7 @@ npm i @nuka9510/simple-validation
 </script>
 ```
 ## Usage
-### js (> 1.1.2)
+### js
 ```
 const validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
 
@@ -85,7 +85,7 @@ validation.run(form);
 
 console.debug(validation.result);
 ```
-### cjs (> 1.2.3)
+### cjs
 ```
 const simpleValidation = require('@nuka9510/simple-validation'),
 validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
