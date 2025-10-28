@@ -10,7 +10,12 @@
     "target": "ESNext",
     "declaration": true,
     "declarationDir": "dist",
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@nuka9510/simple-validation": ["src/index.ts"],
+      "@nuka9510/simple-validation/@types/validation": ["@types/validation.d.ts"]
+    }
   },
   "include": [
     "src/index.ts"

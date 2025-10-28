@@ -1,4 +1,4 @@
-import { config, result } from "../@types/validation";
+import { config, result } from "@nuka9510/simple-validation/@types/validation";
 /**
  * Validation Check를 위한 객체
  */

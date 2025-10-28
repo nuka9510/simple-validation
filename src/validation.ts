@@ -1,4 +1,4 @@
-import { config, el, InputElement, radio, regex, result } from "../@types/validation";
+import { config, el, InputElement, radio, regex, result } from "@nuka9510/simple-validation/@types/validation";
 import { Util } from "@nuka9510/js-util";
 
 /**
