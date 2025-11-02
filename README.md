@@ -79,32 +79,19 @@ npm i @nuka9510/simple-validation
 - js
 
 ```js
-const validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
-
-validation.run(form);
-
-console.debug(validation.result);
+simpleValidation.Validation;
 ```
 
 - mjs
 
 ```js
 import { Validation } from "@nuka9510/simple-validation";
-
-const validation = new Validation({ regex: { test: /^test/ } });
-
-validation.run(form);
-
-console.debug(validation.result);
 ```
 
 - cjs
 
 ```js
-const simpleValidation = require('@nuka9510/simple-validation'),
-validation = new simpleValidation.Validation({ regex: { test: /^test/ } });
+const simpleValidation = require('@nuka9510/simple-validation');
 
-validation.run(form);
-
-console.debug(validation.result);
+simpleValidation.Validation;
 ```
