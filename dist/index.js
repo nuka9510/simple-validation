@@ -1,2 +1,3 @@
 import Validation from "./validation.js";
-export { Validation };
+import Phase from "./enums/phase.js";
+export { Validation, Phase };

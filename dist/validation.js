@@ -1,4 +1,5 @@
 import { Util } from "@nuka9510/js-util";
+import Phase from "./enums/phase.js";
 /**
  * Validation Check를 위한 객체
  */
@@ -61,7 +62,8 @@ export default class Validation {
         this.result = {
             flag: true,
             alertMsg: null,
-            el: null
+            el: null,
+            phase: Phase.INIT
         };
     }
     /** validation check할 Element를 담는 객체 초기화 */
@@ -89,6 +91,7 @@ export default class Validation {
                 this.result.flag = false;
                 this.result.alertMsg = `'${required}'을/를 입력해 주세요.`;
                 this.result.el = el;
+                this.result.phase = Phase.REQUIRED;
             }
         }
     }
@@ -100,6 +103,7 @@ export default class Validation {
                 this.result.flag = false;
                 this.result.alertMsg = `'${i}'을/를 선택해주세요.`;
                 this.result.el = el;
+                this.result.phase = Phase.REQUIRED;
                 break;
             }
         }
@@ -181,6 +185,7 @@ export default class Validation {
                         this.result.flag = false;
                         this.result.alertMsg = `'${inputName || required}'의 시작일이 종료일 보다 늦습니다.`;
                         this.result.el = el[i].S;
+                        this.result.phase = Phase.MATCH;
                     }
                 }
             }
@@ -200,6 +205,7 @@ export default class Validation {
                         this.result.flag = false;
                         this.result.alertMsg = `'${inputName || required}'의 형식이 올바르지 않습니다.`;
                         this.result.el = i;
+                        this.result.phase = Phase.MATCH;
                         break;
                     }
                 }
@@ -213,6 +219,7 @@ export default class Validation {
                     this.result.flag = false;
                     this.result.alertMsg = `'${inputName || required}'의 형식이 올바르지 않습니다.`;
                     this.result.el = el;
+                    this.result.phase = Phase.MATCH;
                 }
             }
         }
@@ -232,6 +239,7 @@ export default class Validation {
                                 this.result.flag = false;
                                 this.result.alertMsg = `'${inputName || required}'은/는 ${j.minLength}~${j.maxLength}자 이내로 입력해주세요.`;
                                 this.result.el = j;
+                                this.result.phase = Phase.LENGTH;
                                 break;
                             }
                         }
@@ -241,6 +249,7 @@ export default class Validation {
                                 this.result.flag = false;
                                 this.result.alertMsg = `'${inputName || required}'은/는 ${j.minLength}자 이상으로 입력해주세요.`;
                                 this.result.el = j;
+                                this.result.phase = Phase.LENGTH;
                                 break;
                             }
                         }
@@ -250,6 +259,7 @@ export default class Validation {
                                 this.result.flag = false;
                                 this.result.alertMsg = `'${inputName || required}'은/는 ${j.maxLength}자 이하로 입력해주세요.`;
                                 this.result.el = j;
+                                this.result.phase = Phase.LENGTH;
                                 break;
                             }
                         }
@@ -285,6 +295,9 @@ export default class Validation {
         }
         if (this.result.flag) {
             this.#length();
+        }
+        if (this.result.flag) {
+            this.result.phase = Phase.DONE;
         }
     }
 }

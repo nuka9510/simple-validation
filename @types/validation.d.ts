@@ -1,3 +1,5 @@
+import { Phase } from "@nuka9510/simple-validation";
+
 export type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 /** 결과 값 객체 */
@@ -8,6 +10,8 @@ export interface result {
   alertMsg: string | null;
   /** #default `null` */
   el: InputElement | null;
+  /** #default `Phase.INIT` */
+  phase: Phase;
 }
 
 export interface dateEl {
